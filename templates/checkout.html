@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-icon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/shirt.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    <title>Checkout</title>
+
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                The Student Store
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" onclick="clearCart()" href="/">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" onclick="clearCart()" href="/#services">Shop</a>
+                        </li>
+                        <li class="nav-iterm">
+                            <li class="nav-item"></li>
+                            <a class="nav-link">Hello, {{ user.first_name}}</a>
+                        </li>
+                        <li class="nav-iterm">
+                            <li class="nav-item"></li>
+                            <a class="nav-link" href="logout">Logout</a>
+                        </li>
+
+                    </ul>
+                </div>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search" style="width : 5.25em"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cart icon
+                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                         login icon
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+-->
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container">
+    <div class="col my-4">
+        <h2> Step 1 - The Student Store Express Checkout - Review Your Cart items </h2>
+        <div>
+            <ul class="list-group" id="items">
+
+            </ul>
+            <nav aria-label="breadcrumb">
+  <ol class="breadcrumb mt-3">
+    <li class="breadcrumb-item active" aria-current="page">Total Price:<span id="totalPrice"></span></li>
+  </ol>
+</nav>
+
+
+        </div>
+    </div>
+    <div class="col my-4">
+        <h2> Step 2 - Enter Address & Other Details</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="name">Name</label>
+                    <input type="name" class="form-control" id="name" placeholder="Name">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address Line 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="inputState">State</label>
+                    <input type="text" class="form-control" id="inputState" placeholder="Enter State">
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputZip">Phone Number</label>
+                <input type="tel" class="form-control" id="inputPhone">
+            </div>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+             <label for="html"><img src="{% static 'images/paytm.png' %}" style="width:70px"></label>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css"><img src="{% static 'images/dcard.png' %}" style="width:70px"></label>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript"><img src="{% static 'images/cod.jpg' %}" style="width:70px"></label><br>
+            <input type="radio" id="pp" name="fav_language" value="JavaScript">
+            <label for="javascript"><img src="{% static 'images/phonep.png' %}" style="width:70px"></label><br>
+            <button type="submit" class="btn btn-dark">Place Order</button>
+        </form>
+    </div>
+</div>
+
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script>
+        if (localStorage.getItem('cart') == null){
+        var cart = {};
+}
+else {
+cart = JSON.parse(localStorage.getItem('cart'));
+}
+console.log(cart);
+var sum = 0;
+var totalPrice=0;
+for(item in cart){
+ let name = cart[item][1];
+ let qty = cart[item][0];
+ let itemPrice = cart[item][2];
+ sum = sum + qty;
+ totalPrice = totalPrice+qty* itemPrice;
+ mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                    <span>${qty}</span>
+                </li>`
+ $('#items').append(mystr);
+ }
+document.getElementById('totalPrice').innerHTML = totalPrice;
+    </script>
+  </body>
+</html>

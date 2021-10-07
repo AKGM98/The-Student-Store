@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>The Student Store</title>
+     {% load static %}
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/thestudentstore.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/owl-carousel.css' %}">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo">The Student Store</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#welcome" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#services">Shop</a></li>
+
+                            {% if user.is_authenticated %}
+
+                            <li> Hello, {{ user.first_name}}</li>
+                            <li><a href="logout">Logout</a> </li>
+
+                            {% else %}
+                            <li class="submenu">
+                                <a href="javascript:;">Register/Login</a>
+                                <ul>
+                                    <li><a href="registration">Register</a></li>
+                                    <li><a href="login">Login</a></li>
+                                    {% endif %}
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <h1>THE STUDENT STORE IS OPEN 24/7 <strong>FOR YOU</strong></h1>
+                        <p>This Website Let You Buy Old Books As Well As New Books And Also Downloadable PDF And All Sorts Of Student Essentials</p>
+                        <a href="#about" class="main-button-slider">Find Out More</a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                        <img src="{% static 'images/slider-icon.png' %}" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="{% static 'images/left-image.png' %}" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="left-heading">
+                        <h5>The Student Store Is Basically Design For Student.</h5>
+                    </div>
+                    <div class="left-text">
+                        <p>Here You Can Buy All Types Of Old Books And New One Also,We Provide Downloadable Pdf's And All Stationery Items And Many More.</p>
+                        <a href="#about2" class="main-button">Discover More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about2">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>More About Our Website.</h5>
+                    </div>
+                    <p>This Website Is Made By A Group Of Student Guided By Teachers.</p>
+                    <ul>
+                        <li>
+                            <img src="{% static 'images/rtc-header-new2.png' %}" alt="" height="50">
+                            <div class="text">
+                                <h6>RTC Institute Of Technology</h6>
+                                <p>..................</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="{% static 'images/graduated.png' %}" alt="" height="50">
+                            <div class="text">
+                                <h6>Student Contribution</h6>
+                                <p>......................</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="{% static 'images/browser.png' %}" alt="" height="50">
+                            <div class="text">
+                                <h6>This Website</h6>
+                                <p>...............................</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="{% static 'images/right-image.png' %}" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+
+    <!-- ***** Shop Module ***** -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item service-item" style="height:400px;">
+                        <div class="icon">
+                            <i><img src="{% static 'images/book.png' %}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Books</h5>
+                        <p>Here You Can Buy New And Old Books.</p>
+                        <a href="book" class="main-button">buy Now</a>
+                    </div>
+                    <div class="item service-item" style="height:400px;">
+                        <div class="icon">
+                            <i><img src="{% static 'images/pdf.png' %}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">PDF</h5>
+                        <p>Here You Can Download PDF's. </p>
+                        <a href="pdf" class="main-button">Download</a>
+                    </div>
+                    <div class="item service-item" style="height:400px;">
+                        <div class="icon">
+                            <i><img src="{% static 'images/laptop.png' %}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Laptops</h5>
+                        <p>Here You Can Buy Old Laptops.</p>
+                        <a href="laptop" class="main-button">Buy Now</a>
+                    </div>
+                    <div class="item service-item" style="height:400px;">
+                        <div class="icon">
+                            <i><img src="{% static 'images/ipad.png' %}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Tablets</h5>
+                        <p>Here You Can Buy Old Tablets</p>
+                        <a href="tablet" class="main-button">Buy Now</a>
+                    </div>
+                    <div class="item service-item" style="height:400px;">
+                        <div class="icon">
+                            <i><img src="{% static 'images/stationery.png' %}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Stationery</h5>
+                        <p>Here You Can Buy All Types Of Stationery Items.</p>
+                        <a href="stationery" class="main-button">Buy Now</a>
+                    </div>
+                    <div class="item service-item" style="height:400px;">
+                        <div class="icon">
+                            <i><img src="{% static 'images/shirt.png' %}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Uniforms</h5>
+                        <p>Here You Can Buy All Types Of Uniforms.</p>
+                        <a href="uniform" class="main-button">Buy Now</a>
+                    </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Shop Module ***** -->
+
+
+    <!-- ***** Contact Us Start ***** -->
+    <section class="section" id="contact-us">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- ***** Contact Map Start ***** -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4352.270737216367!2d85.48837444504612!3d23.467358129906565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4fa60013bfae5%3A0x527c47eab7685b66!2sRTC%20INSTITUTE%20OF%20TECHNOLOGY!5e0!3m2!1sen!2sin!4v1612364959925!5m2!1sen!2sin" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- ***** Contact Map End ***** -->
+
+                <!-- ***** Contact Form Start ***** -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="post">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Full Name" required="" class="contact-field">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" placeholder="E-mail" required="" class="contact-field">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" id="message" placeholder="Your Message" required="" class="contact-field"></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button">Send It</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Contact Form End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us End ***** -->
+
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+               
+                <div class="col-12 text-center">
+                   
+                    <a href="#" class="btn btn-primary mx-2 mt-4 mb-4"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="btn btn-primary mx-2 mt-4 mb-4"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="btn btn-primary mx-2 mt-4 mb-4"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="btn btn-primary mx-2 mt-4 mb-4"><i class="fa fa-rss"></i></a>
+                    <a href="#" class="btn btn-primary mx-2 mt-4 mb-4"><i class="fa fa-dribbble"></i></a>
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'js/owl-carousel.js' %}"></script>
+    <script src="{% static 'js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imgfix.min.js' %}"></script>
+    
+    <!-- Global Init -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+  </body>
+</html>

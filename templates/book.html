@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book</title>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="{% static 'images/apple-icon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/ipad.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+<!--
+
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" role="button" onclick="clearCart()" href="/">
+                The Student Store
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" onclick="clearCart()" href="/">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" onclick="clearCart()" href="/#services">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" id="popcart" class="btn btn-secondary" data-bs-html="true" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom"   data-bs-content="And here's some amazing content. It's very engaging. Right?">
+  Cart(<span id="cart">0</span>)
+</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" onclick="clearCart()" class="btn btn-primary">Clear</button>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search" style="width : 5.25em"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cart icon-->
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+
+            <div class="col-lg-3">
+
+
+
+
+            </div>
+
+            <div class="col-lg-9">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" style="height: 200px" src="{{ product.9.productu_image.url}}">
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none" id="namepr{{product.9.id}}">{{ product.9.productu_name }}</a>
+                                <p class="text-center mb-0" id="pricepr{{product.9.id}}">{{ product.9.productu_price }}</p>
+                                <span id="divpr{{product.9.id}}" class="divpr">
+                                <button type="Button" id="pr{{product.9.id}}" class="btn btn-light cart">Add To Cart</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" style="height: 200px"src="{{ product.10.productu_image.url}}">
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none" id="namepr{{product.10.id}}">{{ product.10.productu_name }}</a>
+                                <p class="text-center mb-0" id="pricepr{{product.10.id}}">{{ product.10.productu_price }}</p>
+                                <span id="divpr{{product.10.id}}" class="divpr">
+                                <button type="Button" id="pr{{product.10.id}}" class="btn btn-light cart">Add To Cart</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid" style="height: 200px"src="{{ product.11.productu_image.url}}">
+                            </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none" id="namepr{{product.11.id}}">{{ product.11.productu_name }}</a>
+
+                                <p class="text-center mb-0" id="pricepr{{product.11.id}}">{{ product.11.productu_price }}</p>
+                                <span id="divpr{{product.11.id}}" class="divpr">
+                                <button type="Button" id="pr{{product.11.id}}" class="btn btn-light cart">Add To Cart</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content -->
+
+
+
+    <!-- Start Script -->
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/templatemo.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <!-- End Script -->
+<script>
+
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+if (localStorage.getItem('cart') == null){
+var cart = {};
+}
+else {
+cart = JSON.parse(localStorage.getItem('cart'));
+updateCart(cart);
+}
+
+//$('.cart').click(function(){
+$('.divpr').on('click', 'button.cart', function(){
+console.log('clicked')
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+qty = cart[idstr][0] + 1;
+}
+else
+{
+qty = 1;
+name = document.getElementById('name'+idstr).innerHTML;
+price = document.getElementById('price'+idstr).innerHTML;
+cart[idstr] = [qty,name, parseInt(price)];
+}
+updateCart(cart);
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+updatePopover(cart);
+function updatePopover(cart)
+{
+ console.log('we are at popover')
+ var popStr = "";
+ popStr = popStr + "<h5> cart Update </h5>";
+ var i = 1;
+ for (var item in cart){
+ popStr = popStr + "<b>" + i + "</b>. ";
+ popStr = popStr + document.getElementById('name'+item).innerHTML + "Qty:   " + cart[item][0] + '<br>';
+ i = i+1;
+ }
+popStr = popStr + "<a href='checkout'>Checkout</a>"
+document.getElementById('popcart').setAttribute('data-bs-content', popStr);
+
+}
+function clearCart(){
+cart = JSON.parse(localStorage.getItem('cart'));
+    for (var item in cart){
+            document.getElementById('div' + item).innerHTML = '<button id="'+ item +'" class="btn btn-light cart">Add To Cart</button>'
+           }
+
+localStorage.clear();
+cart = {};
+updateCart(cart);
+
+}
+function updateCart(cart){
+  var sum = 0;
+  for (var item in cart){
+  sum = sum + cart[item][0];
+  document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-info minus'>-</button> <span id='val" + item + "''>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn btn-dark plus'> + </button>";
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  document.getElementById('cart').innerHTML = sum;
+  updatePopover(cart);
+  }
+$('.divpr').on("click", "button.minus", function(){
+console.log(" minus clicked");
+a = this.id.slice(7, );
+cart['pr'+a][0] = cart['pr'+a][0] - 1;
+cart['pr'+a][0]=Math.max(0, cart['pr'+a][0]);
+document.getElementById('valpr'+a).innerHTML = cart['pr'+a][0];
+updateCart(cart);
+});
+$('.divpr').on("click", "button.plus", function(){
+console.log(" plus clicked");
+a = this.id.slice(6, );
+cart['pr'+a][0] = cart['pr'+a][0] + 1;
+document.getElementById('valpr'+a).innerHTML = cart['pr'+a][0];
+updateCart(cart);
+});
+
+
+    </script>
+</body>
+
+</html>
